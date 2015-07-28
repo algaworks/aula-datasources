@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+header {
+	padding: 5px;
+	height: 30px;
+	background-color: #545454;
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc
+}
+
+#conteudo {
+	padding: 15px
+}

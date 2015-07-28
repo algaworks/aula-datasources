@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Agenda</title>
+
+	<h:outputStylesheet library="css" name="estilo.css" />
+</h:head>
+
+<h:body>
+	<h:form id="frm">
+		<div id="conteudo">
+			<h:panelGrid columns="1" style="margin-left: 10px">
+					<p:outputLabel value="Nome" for="nome" />
+					<p:inputText size="30" id="nome" value="#{cadastroContatoBean.contato.nome}" />
+					
+					<p:outputLabel value="Telefone" for="telefone" />
+					<p:inputText size="15" id="telefone" value="#{cadastroContatoBean.contato.numero}" />
+					
+					<p:commandButton value="Cadastrar" icon="fa fa-save"
+						id="botao-cadastrar" update="frm"
+						action="#{cadastroContatoBean.cadastrar}" />
+			</h:panelGrid>
+			
+			<br/>
+		
+			<p:dataGrid value="#{cadastroContatoBean.todosContatos}"
+				var="contato" columns="3" layout="grid" id="grid-contatos" emptyMessage="Nenhum contato cadastrado.">
+				<p:panel header="#{contato.nome}" style="text-align: center">
+					<h:outputText value="#{contato.numero}" />
+				</p:panel>
+			</p:dataGrid>
+		</div>
+	</h:form>
+</h:body>
+</html>
